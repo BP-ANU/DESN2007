@@ -1,8 +1,15 @@
+#deck {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .card {
     width: 100px;
     height: 150px;
     margin: 5px;
 }
+
 .upside-down {
     transform: rotate(180deg);
 }

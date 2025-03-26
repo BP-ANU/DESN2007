@@ -3,18 +3,22 @@ const deck = [];
 // Function to load card images from a folder
 function loadCardImages(folderPath) {
     const imageExtensions = ['.png', '.jpeg', '.jpg'];
-    const imageFiles = [
-        'card1.png',
-        'card2.jpeg',
-        // Add all your image file names here
-    ];
 
-    imageFiles.forEach(file => {
-        const extension = file.slice(file.lastIndexOf('.')).toLowerCase();
-        if (imageExtensions.includes(extension)) {
-            deck.push(`${folderPath}/${file}`);
-        }
-    });
+    // Fetch the list of files from the folder
+    fetch(folderPath)
+        .then(response => response.text())
+        .then(data => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(data, 'text/html');
+            const imageFiles = Array.from(htmlDoc.querySelectorAll('a'))
+                .map(link => link.href)
+                .filter(href => imageExtensions.some(ext => href.endsWith(ext)));
+
+            imageFiles.forEach(file => {
+                deck.push(file);
+            });
+        })
+        .catch(error => console.error('Error loading images:', error));
 }
 
 // Load card images from the specified folder

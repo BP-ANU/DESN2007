@@ -4,19 +4,24 @@ for (let i = 1; i <= 100; i++) {
 }
 
 function shuffleDeck() {
+    return deck.sort(() => Math.random() - 0.5);
+}
+
+function dealThreeCards() {
     try {
-        const shuffledDeck = deck.sort(() => Math.random() - 0.5);
+        const shuffledDeck = shuffleDeck();
         const deckElement = document.getElementById('deck');
         deckElement.innerHTML = '';
 
-        shuffledDeck.forEach(card => {
+        for (let i = 0; i < 3; i++) {
+            const card = shuffledDeck[i];
             const cardElement = document.createElement('img');
             cardElement.src = card;
             cardElement.className = 'card';
             cardElement.classList.toggle('upside-down', Math.random() > 0.5);
             deckElement.appendChild(cardElement);
-        });
+        }
     } catch (error) {
-        console.error('Error shuffling deck:', error);
+        console.error('Error dealing cards:', error);
     }
 }

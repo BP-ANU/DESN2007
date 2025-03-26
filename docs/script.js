@@ -1,8 +1,24 @@
-onst deck = [
-    'images/card1.png',
-    'images/card2.png',
-    // Add paths to all your card images
-];
+const deck = [];
+
+// Function to load card images from a folder
+function loadCardImages(folderPath) {
+    const imageExtensions = ['.png', '.jpeg', '.jpg'];
+    const imageFiles = [
+        'card1.png',
+        'card2.jpeg',
+        // Add all your image file names here
+    ];
+
+    imageFiles.forEach(file => {
+        const extension = file.slice(file.lastIndexOf('.')).toLowerCase();
+        if (imageExtensions.includes(extension)) {
+            deck.push(`${folderPath}/${file}`);
+        }
+    });
+}
+
+// Load card images from the specified folder
+loadCardImages('images');
 
 function shuffleDeck() {
     const shuffledDeck = deck.sort(() => Math.random() - 0.5);

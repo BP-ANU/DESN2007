@@ -7,7 +7,7 @@ function shuffleDeck() {
     return deck.sort(() => Math.random() - 0.5);
 }
 
-function dealThreeCards() {
+function shuffleAndDeal() {
     try {
         const shuffledDeck = shuffleDeck();
         const deckElement = document.getElementById('deck');
@@ -22,6 +22,6 @@ function dealThreeCards() {
             deckElement.appendChild(cardElement);
         }
     } catch (error) {
-        console.error('Error dealing cards:', error);
+        console.error('Error shuffling and dealing cards:', error);
     }
 }

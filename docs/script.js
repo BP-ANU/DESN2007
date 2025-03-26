@@ -21,8 +21,8 @@ function shuffleDeck() {
         const cardElement = document.createElement('img');
         cardElement.src = card;
         cardElement.className = 'card';
-        cardElement.style.width = '100px';  // Set uniform width
-        cardElement.style.height = '150px'; // Set uniform height
+        cardElement.style.width = '200px';  // Set uniform width
+        cardElement.style.height = '300px'; // Set uniform height
         if (Math.random() > 0.5) {
             cardElement.classList.add('upside-down');
         }

@@ -1,4 +1,4 @@
-const deck = [
+onst deck = [
     'images/card1.png',
     'images/card2.png',
     // Add paths to all your card images
@@ -13,6 +13,8 @@ function shuffleDeck() {
         const cardElement = document.createElement('img');
         cardElement.src = card;
         cardElement.className = 'card';
+        cardElement.style.width = '400px';  // Set the width to 400 pixels
+        cardElement.style.height = 'auto';  // Maintain the aspect ratio
         if (Math.random() > 0.5) {
             cardElement.classList.add('upside-down');
         }

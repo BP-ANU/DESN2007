@@ -1,8 +1,16 @@
-const deck = [
+const deck = [];
+
+// Manually list the image files
+const imageFiles = [
     'images/card1.png',
-    'images/card2.png',
-    // Add paths to all your card images
+    'images/card2.jpeg',
+    // Add all your image file names here
 ];
+
+// Load card images into the deck
+imageFiles.forEach(file => {
+    deck.push(file);
+});
 
 function shuffleDeck() {
     const shuffledDeck = deck.sort(() => Math.random() - 0.5);

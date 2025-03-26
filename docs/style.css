@@ -1,7 +1,9 @@
 .card {
-    width: 434px;
-    height: 750px;
-    object-fit: cover; /* or 'contain' to maintain aspect ratio */
-    margin: 10px;
-    display: inline-block;
+    width: 100px;
+    height: 150px;
+    margin: 5px;
 }
+.upside-down {
+    transform: rotate(180deg);
+}
+

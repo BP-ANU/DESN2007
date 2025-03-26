@@ -33,7 +33,7 @@ function shuffleDeck() {
         const cardElement = document.createElement('img');
         cardElement.src = card;
         cardElement.className = 'card';
-        cardElement.style.width = '400px';  // Set the width to 400 pixels
+        cardElement.style.width = '300px';  // Set the width to 300 pixels
         cardElement.style.height = 'auto';  // Maintain the aspect ratio
         if (Math.random() > 0.5) {
             cardElement.classList.add('upside-down');

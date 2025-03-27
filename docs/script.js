@@ -1,5 +1,5 @@
 const deck = [];
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 44; i++) {
     deck.push(`images/card-${String(i).padStart(2, '0')}.jpg`);
 }
 
